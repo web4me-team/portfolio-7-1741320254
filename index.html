@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartoon Style Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <aside class="sidebar" data-sidebar>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="profile/1.svg" alt="User" style="width: 250px; height: auto; max-width: 100%; border-radius: 50%;">
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Rui Wu (Rena)">Rui Wu (Rena)</h1>
+          <p class="title">Computational Biologist & Computer Scientist</p>
+        </div>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+        </button>
+      </div>
+      <div class="sidebar-info_more" data-sidebar-more>
+        <div class="separator"></div>
+        <ul class="contacts-list">
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:abc@gmail.com" class="contact-link">abc@gmail.com</a>
+            </div>
+          </li>
+        </ul>
+        <div class="separator"></div>
+        <ul class="social-list">
+        </ul>
+      </div>
+    </aside>
+
+    <div class="main-content">
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Education</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Research</button>
+          </li>
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Publications</button>
+          </li>
+        </ul>
+      </nav>
+
+      <article class="about active" data-page="about">
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+        <section class="about-text">
+          <h2>👋 Hi, I'm Rui Wu (Rena)</h2>
+          <p>Rui Wu is a skilled computational biologist and computer scientist with expertise in data analysis, NLP, deep learning, and software development. She has experience in genomic expression analysis, blockchain, and homomorphic encryption, and has developed high-performance algorithms for seismic wave simulations.</p>
+        </section>
+      </article>
+
+      <article class="education" data-page="education">
+        <header>
+          <h2 class="h2 article-title">
+            <ion-icon name="book-outline"></ion-icon> Education
+          </h2>
+        </header>
+        <section class="timeline">
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Yale University</h4>
+              <span>08/2024 - Present</span>
+              <p class="timeline-text">Master in Computational Biology and Bioinformatics</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">University of California, San Diego</h4>
+              <span>04/2021 - 06/2024</span>
+              <p class="timeline-text">Bachelor of Science in Computer Science</p>
+            </li>
+          </ol>
+        </section>
+      </article>
+
+      <article class="research" data-page="research">
+        <header>
+          <h2 class="h2 article-title">
+            <ion-icon name="flask-outline"></ion-icon> Research
+          </h2>
+        </header>
+        <section class="timeline">
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Research Assistant - Computational pipeline developer</h4>
+              <span>12/2024 - Present</span>
+              <p class="timeline-text">Designed and optimized computational pipelines for genomic expression analysis, improving data processing efficiency. Developed and maintained data workflows using Python, R, and SQL to analyze large-scale biological datasets.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Research Assistant - Blockchain and homomorphic encryption</h4>
+              <span>08/2024 - Present</span>
+              <p class="timeline-text">Research on blockchain and homomorphic encryption, synthesizing findings for analysis and implementation. Developed a blockchain system integrating homomorphic encryption to enhance secure computation and data privacy. Implemented smart contracts using Solidity and optimized cryptographic algorithms in Java and C++.</p>
+            </li>
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Student Intern - Southern California Earthquake Center</h4>
+              <span>04/2022 - 04/2024</span>
+              <p class="timeline-text">Engineered high-performance seismic wave simulation algorithms in C++ using the Kokkos library for GPU and multi-threaded parallelization. Conducted analysis of seismic datasets, applying machine learning techniques for pattern recognition and predictive modeling.</p>
+            </li>
+          </ol>
+        </section>
+      </article>
+
+      <article class="publications" data-page="publications">
+        <header>
+          <h2 class="h2 article-title">
+            <ion-icon name="document-text-outline"></ion-icon> Publications
+          </h2>
+        </header>
+        <section class="timeline">
+          <ol class="timeline-list">
+          </ol>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <script>
+    'use strict';
+
+    // Toggle sidebar contacts
+    const sidebar = document.querySelector("[data-sidebar]");
+    const sidebarBtn = document.querySelector("[data-sidebar-btn]");
+    const sidebarMore = document.querySelector("[data-sidebar-more]");
+
+    sidebarBtn.addEventListener("click", function () {
+      sidebarMore.classList.toggle("active");
+      sidebarBtn.querySelector("span").textContent = sidebarMore.classList.contains("active") ? "Hide Contacts" : "Show Contacts";
+    });
+
+    // Handle navigation links
+    const navigationLinks = document.querySelectorAll("[data-nav-link]");
+    const pages = document.querySelectorAll("[data-page]");
+
+    navigationLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        navigationLinks.forEach(navLink => navLink.classList.remove("active"));
+        this.classList.add("active");
+
+        const pageName = this.textContent.toLowerCase().trim();
+        pages.forEach(page => page.classList.remove("active"));
+        const targetPage = document.querySelector(`[data-page="${pageName}"]`);
+        if (targetPage) {
+          targetPage.classList.add("active");
+          window.scrollTo(0, 0);
+        }
+      });
+    });
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
